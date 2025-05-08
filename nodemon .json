@@ -1,0 +1,9 @@
+{
+  "watch": [".", "bot.js"],
+  "ext": "js,json",
+  "ignore": ["sessions/**", "*.media"],
+  "exec": "node bot.js",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
