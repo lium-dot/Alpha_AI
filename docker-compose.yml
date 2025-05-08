@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  whatsapp-bot:
+    build: .
+    volumes:
+      - auth_data:/usr/src/app/auth_info
+      - temp_files:/usr/src/app/temp
+      - permissions:/usr/src/app/permissions.json
+    environment:
+      - BOT_NUMBER=${BOT_NUMBER}
+      - ADMIN_JID=${ADMIN_JID}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+      - LOG_LEVEL=info
+
+volumes:
+  auth_data:
+  temp_files:
+  permissions:

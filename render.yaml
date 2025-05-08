@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: whatsapp-bot
+    runtime: docker
+    env: node
+    buildCommand: docker build -t whatsapp-bot .
+    startCommand: npm start
+    envVars:
+      - key: BOT_NUMBER
+        value: your_bot_number
+      - key: ADMIN_JID
+        value: your_admin_jid
+      - key: ENCRYPTION_KEY
+        value: your_32_char_key
+      - key: LOG_LEVEL
+        value: info
