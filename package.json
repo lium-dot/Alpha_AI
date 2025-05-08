@@ -1,23 +1,30 @@
 {
   "name": "ALPHA",
   "version": "1.0.0",
-  "description": "Free WhatsApp AI with Permissions",
+  "description": "WhatsApp AI Assistant",
   "main": "bot.js",
   "type": "module",
   "scripts": {
-    "start": "node bot.js",
-    "dev": "nodemon bot.js"
+    "start": "pm2 start bot.js --name ALPHA --watch",
+    "dev": "nodemon bot.js",
+    "stop": "pm2 stop ALPHA",
+    "logs": "pm2 logs ALPHA"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "^6.7.16",
     "axios": "^1.6.2",
+    "pino": "^8.16.2",
     "node-cache": "^5.1.2",
-    "fs-extra": "^11.1.1"
+    "fluent-ffmpeg": "^2.1.2",
     "ffmpeg-static": "^5.1.0",
     "form-data": "^4.0.0",
-    "fluent-ffmpeg": "^2.1.2"
+    "fs-extra": "^11.1.1"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "pm2": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
